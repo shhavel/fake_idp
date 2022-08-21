@@ -25,6 +25,7 @@ module FakeIdp
     def initialize(
       name_id:,
       issuer_uri:,
+      audience_uri:,
       saml_acs_url:,
       saml_request_id:,
       user_attributes:,
@@ -149,7 +150,7 @@ module FakeIdp
 
         assertion[:saml].Conditions(saml_conditions) do |conditions|
           conditions[:saml].AudienceRestriction do |restriction|
-            restriction[:saml].Audience { |audience| audience << @issuer_uri }
+            restriction[:saml].Audience { |audience| audience << @audience_uri }
           end
         end
 

@@ -31,7 +31,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.9)
     diff-lcs (1.4.2)
-    dotenv (1.0.2)
+    dotenv (2.8.1)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     macaddr (1.7.1)
@@ -95,7 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2)
-  dotenv (~> 1.0)
+  dotenv (~> 2.7)
   fake_idp!
   pry (~> 0.12.2)
   rake (~> 13.0)
@@ -103,4 +103,4 @@ DEPENDENCIES
   ruby-saml-idp!
 
 BUNDLED WITH
-   2.3.8
+   2.3.20

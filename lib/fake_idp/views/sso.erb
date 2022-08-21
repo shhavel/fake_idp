@@ -7,9 +7,9 @@
 <body>
 <h1>Fake SAML SSO Authenticator</h1>
 
-<form action="<%= @saml_acs_url %>" method="post" name="authForm">
+<form action="/auth" method="post" name="sloForm">
   <label for="issuer">Issuer:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-  <input name="issuer" type="text" value="<%= @configuration.issuer %>" size="90" disabled>
+  <input name="issuer" type="text" value="<%= @configuration.issuer %>" size="90">
   <br/>
   <br/>
 
@@ -23,21 +23,8 @@
   <br/>
   <br/>
 
-  <input name="SAMLResponse" type="hidden" value="<%= @saml_response %>">
   <input type="submit" value="Login">
 </form>
 
-<p>
-  Redirecting to <%= @saml_acs_url %> ...
-</p>
-
-<script>
-  window.onload = function(){
-    document.forms['authForm'].submit();
-  }
-</script>
-
-<h2>Encrypted Response</h2>
-<pre><%= @saml_response.strip %></pre>
 </body>
 </html>
